@@ -1,0 +1,51 @@
+body
+.titleListItem{
+    display: flex;
+}
+
+.dateText{
+    font-size: 10px;
+}
+.mainLayout{
+    margin: 15px;
+}
+.listItem:hover{
+    background-color: antiquewhite;
+    
+}
+.listItem{
+    border-radius: 10px;
+    border: 1px solid lightblue;
+}
+.excerciseListItem{
+    padding: 10px;
+}
+.m-auto{
+    margin: auto;
+}
+.m-0{
+    margin: 0;
+}
+
+.display-flex{
+    display: flex;
+}
+p.detilsExcerciseListItem, .detilsExcerciseListItem >p {
+    font-size: 13px;
+    margin: 0px;
+    margin-bottom: 3px;
+    color: grey;
+}
+.listItemTitle{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rightCornerText{
+    margin-left: auto;
+    margin-right:4px;
+    margin-top: 1px;
+}
+.smallText{
+    font-size: 13px;
+}
