@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {
   TextField
 } from "@material-ui/core";
-export function InputWithLabel({label, value, handleChange, type}) {
+export function InputWithLabel({label, value, handleChange, type, defaultValue}) {
   
     return (
     <div>
@@ -14,6 +14,7 @@ export function InputWithLabel({label, value, handleChange, type}) {
         autoComplete="current-password"
         variant="outlined"
         label={label}
+        defaultValue={defaultValue}
       />
     </div>)
   }
@@ -22,7 +23,8 @@ export function InputWithLabel({label, value, handleChange, type}) {
     label: PropTypes.text,
     value: PropTypes.text,
     type: PropTypes.text,
-    handleChange: PropTypes.func.isRequired
+    handleChange: PropTypes.func.isRequired,
+    defaultValue:PropTypes.number
   };
   
 export function BasicInput({value, handleChange, type}) {

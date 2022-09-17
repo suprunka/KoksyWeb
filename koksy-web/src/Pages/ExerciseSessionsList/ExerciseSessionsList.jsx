@@ -14,6 +14,7 @@ function ExerciseSessionsList() {
         key={session}
         name={exercise.name}
         previousReps={previousSession.reps}
+        previousWeight={previousSession.weight}
         />);
     }
     return content;

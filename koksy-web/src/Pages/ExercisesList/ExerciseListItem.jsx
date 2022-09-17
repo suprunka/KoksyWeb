@@ -2,9 +2,9 @@ import PropTypes from "prop-types"
 
 import React from "react";
 
-function ExerciseListItem({name, sessions, breakSeconds, minRepeat, maxRepeat}) {
+function ExerciseListItem({name, sessions, breakSeconds, minRepeat, maxRepeat, onClick}) {
 
-  return (<div className="listItem">
+  return (<div className="listItem" onClick={()=> onClick()}>
         <div className="display-flex">
         <p className="listItemTitle">{name}</p>
         <p className="smallText rightCornerText">x{minRepeat}-{maxRepeat}</p>
@@ -25,6 +25,7 @@ ExerciseListItem.propTypes = {
     breakSeconds :PropTypes.number,
     minRepeat :PropTypes.number,
     maxRepeat :PropTypes.number,
+    onClick :PropTypes.func,
 };
 
 function formatBreakDuration(seconds){

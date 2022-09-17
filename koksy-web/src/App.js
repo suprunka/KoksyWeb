@@ -17,7 +17,7 @@ const App = () => {
         <Route path='/workouts' element={<ProtectedRoute><WorkoutsList/></ProtectedRoute>} />
         <Route path='/workouts/:id' element={<ProtectedRoute><ExercisesList/></ProtectedRoute>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='/work' element={<ExercisesList/>} />
+        <Route path='/workoutSession/:id' element={<ProtectedRoute><ExerciseSessionsList/></ProtectedRoute>} />
         <Route path='/workoutdays' element={<WorkoutsList/>} />
         <Route path='/workoutdays/:id' element={<ExercisesList/>} />
         <Route path='/list/:name' element={<ExerciseSessionsList/>} />

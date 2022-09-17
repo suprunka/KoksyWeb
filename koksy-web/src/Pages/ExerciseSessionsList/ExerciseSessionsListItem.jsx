@@ -3,34 +3,47 @@ import PropTypes from "prop-types"
 import React from "react";
 import { BasicInput } from "../../Components/Inputs";
 import {Container, Row, Col, Button} from "react-bootstrap"
-function ExerciseSessionsListItem({previousWeight, previousReps, weight, reps, handleWeightChanged, handleRepsChanged}) {
+import Timer from './Timer'
+import { useState } from "react";
+function ExerciseSessionsListItem({previousWeight,
+   previousReps,
+  weight,
+   reps,
+    handleWeightChanged,
+     handleRepsChanged,
+    saveRep}) {
+      var [showBreak, setShowBreak] = useState(false);
+      var handleBreakClicked =()=>{
+        saveRep();
+        setShowBreak(true)
+      }
 
   return (<div className="listItem">
-    <div className="titleListItem">
-    <p> </p>
-    <Container fluid>
-  <Row>
-    <Col xs={6} className="smallText">{previousReps } {previousReps != null ? "x":""}</Col>
-    <Col xs={6} className="smallText">{previousWeight} {previousReps != null ? "kg":""}</Col>
-  </Row>
-  <Row>
-    <Col className="display-flex">  
-        <BasicInput value={weight}type="number" handleChange={handleWeightChanged}/></Col>
-        <Col>x</Col>
-    <Col>
-        <BasicInput value={reps} type="number" handleChange={handleRepsChanged}/>
-    </Col>
-    <Col>kg</Col>
-  </Row>
-  <Row>
-    <Col>
-    <Button className="mt-2 mb-2">Przerwa</Button></Col>
-  </Row>
-</Container>
-
-
-    </div>
-
+    {showBreak == true ?
+   <Timer  onClick={()=> setShowBreak(false)} secondToCount={90}/>:
+     <Container fluid>
+     <Row className="mb-2">
+       <Col  className="smallText">{previousReps } {previousReps != null ? "x":""}</Col>
+       <Col ></Col>
+       <Col  className="smallText">{previousWeight} {previousWeight != null ? "kg":""}</Col>
+       <Col xs={1}></Col>
+     </Row>
+     <Row>
+     <Col>
+           <BasicInput value={reps} type="number" handleChange={handleRepsChanged}/>
+       </Col>
+       <Col className="text-center">x</Col>
+       <Col className="display-flex">  
+           <BasicInput value={weight} type="number" handleChange={handleWeightChanged}/></Col>
+      
+       <Col xs={1}>kg</Col>
+     </Row>
+     <Row>
+       <Col>
+       <Button className="breakBtn"  onClick={handleBreakClicked}>Przerwa</Button>
+       </Col>
+     </Row>
+   </Container> }
    
   </div>)
 }
@@ -43,5 +56,6 @@ ExerciseSessionsListItem.propTypes = {
     reps: PropTypes.number,
     handleWeightChanged: PropTypes.string,
     handleRepsChanged: PropTypes.string,
+    saveRep: PropTypes.func
   };
 

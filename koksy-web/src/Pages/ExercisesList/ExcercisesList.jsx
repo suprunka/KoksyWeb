@@ -3,17 +3,20 @@ import {MainLayout} from "../../Components/Layout"
 import ExerciseListItem from "./ExerciseListItem";
 import { fetchForWorkout } from "../../redux/actions/exercisesActions";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 function ExercisesList() {
   const {workoutExercises} = useSelector(state=> state.exercise)
   const dispatch = useDispatch();
   let { id } = useParams();
+  const navigate = useNavigate();
 
+  const onClick = ()=> navigate(`/workoutsession/${id}`)
   useEffect(() => { dispatch(fetchForWorkout(id)) }, []);
   return (<MainLayout>
     <p>Exercises</p>
     {workoutExercises.map(e=> 
     <ExerciseListItem key={e}
+    onClick={onClick}
     name={e.name}
     sessions={e.sessionsCount}
     breakSeconds={e.breakSeconds}

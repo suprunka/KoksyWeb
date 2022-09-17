@@ -18,6 +18,7 @@ body
     margin:  20px 0px;
     border-radius: 10px;
     border: 1px solid lightblue;
+    max-height: 200px;
 }
 .exerciseListItem{
     padding: 10px;
@@ -60,4 +61,18 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
     top: 20px;
     font-size: 24px;
     color: rgb(117, 116, 116);
+}
+.breakBtn{
+    margin-top: 15px;
+    width: 100%;
+}
+.timer{
+    text-align: center;
+    font-size: 35px;
+}
+.CircularProgressbar{
+    max-height: 100px;
+}
+.text-center{
+    text-align: center;
 }
