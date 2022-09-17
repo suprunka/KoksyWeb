@@ -14,10 +14,12 @@ body
     
 }
 .listItem{
+    padding: 15px 10px;
+    margin:  20px 0px;
     border-radius: 10px;
     border: 1px solid lightblue;
 }
-.excerciseListItem{
+.exerciseListItem{
     padding: 10px;
 }
 .m-auto{
@@ -30,7 +32,10 @@ body
 .display-flex{
     display: flex;
 }
-p.detilsExcerciseListItem, .detilsExcerciseListItem >p {
+.display-none{
+    display: none;
+}
+p.detilsExerciseListItem, .detilsExerciseListItem >p {
     font-size: 13px;
     margin: 0px;
     margin-bottom: 3px;
@@ -48,4 +53,11 @@ p.detilsExcerciseListItem, .detilsExcerciseListItem >p {
 }
 .smallText{
     font-size: 13px;
+}
+.backButton{
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    font-size: 24px;
+    color: rgb(117, 116, 116);
 }

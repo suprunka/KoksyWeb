@@ -1,11 +1,30 @@
-import React from "react";
+import React, {useEffect } from "react";
 import WorkoutListItem from "./WorkoutListItem";
 import {MainLayout} from "../../Components/Layout"
+import { useNavigate } from "react-router-dom";
+import { fetchAll } from "../../redux/actions/workoutDayActions";
+import { useDispatch, useSelector } from "react-redux";
+
 function WorkoutsList() {
-    var worktypes= [{name:"Dzine 1", lastOpened:new Date(2022, 6, 1).toDateString()}]
-  return (<MainLayout>
+    let navigate = useNavigate();
+    const {list} = useSelector(state=> state.workoutDays)
+    const dispatch = useDispatch();
+
+    useEffect(() => { dispatch(fetchAll()) }, []);
+
+  const handleDayClick = id => {
+    navigate(`${id}`)
+  };
+
+  return (
+  <MainLayout>
     <p>Workouts</p>
-    <div> {worktypes.map(el => <WorkoutListItem key={el} name={el.name} lastOpened={el.lastOpened}></WorkoutListItem>) } 
+    <div> {list?.map(el =>
+         <WorkoutListItem key={el.id}
+          name={el.name} 
+          lastOpened={el.lastOpened}
+          onClick={()=>handleDayClick(el.id)}
+          />)} 
 </div>   
   </MainLayout>)
 }

@@ -8,7 +8,7 @@ height: 50px;
 display: flex;
 justify-content: space-between;
 padding: 0.2rem calc((100vw - 1000px) / 2);
-z-index: 12;
+z-index: 1000;
 @media screen and (max-width: 768px) {
 	height:85px;
 }
@@ -44,6 +44,7 @@ cursor: pointer;
 export const Bars = styled(FaBars)`
 color: #808080;
 display:none;
+z-index: 1000;
 @media screen and (max-width: 768px) {
 	display: block;
 	position: absolute;
@@ -58,6 +59,8 @@ display:none;
 export const NavMenu = styled.div`
 display: flex;
 align-items: center;
+z-index: 1000;
+
 margin-right: -24px;
 /* Second Nav */
 /* margin-right: 24px; */
@@ -80,8 +83,9 @@ white-space: nowrap; */
 	width:100%;
 	display:block;
 	margin-top:85px;
-	min-height:50px;
+	height:100%;
 	background:red;
+	z-index: 1000;
 }
 `;
 

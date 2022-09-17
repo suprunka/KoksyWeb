@@ -1,31 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-export function InputWithLabel({label, value, handleChange, isValueHidden}) {
+import {
+  TextField
+} from "@material-ui/core";
+export function InputWithLabel({label, value, handleChange, type}) {
+  
     return (
     <div>
-        <label htmlFor={label}>{label}</label>
-      <input id="" name={label}  value={value}
-             type={isValueHidden? "password":"text"}
-          onChange={(e)=>handleChange(e.target.value)}></input>
+       <TextField
+        value={value}
+        onChange={(e) => handleChange(e.target.value)}
+        type={type}
+        autoComplete="current-password"
+        variant="outlined"
+        label={label}
+      />
     </div>)
   }
   
   InputWithLabel.propTypes = {
     label: PropTypes.text,
     value: PropTypes.text,
-    isValueHidden: PropTypes.bool,
+    type: PropTypes.text,
     handleChange: PropTypes.func.isRequired
   };
   
 export function BasicInput({value, handleChange, type}) {
   return (
   <div>
-    <input id=""  value={value}
-           type={type}
-           inputMode={type =="number" ? "numeric":""}
-           pattern={type =="number" ? "[0-9]*":""}
-        onChange={(e)=>handleChange(e.target.value)}></input>
+     <TextField
+        value={value}
+        type={type}
+        onChange={(e) => handleChange(e.target.value)}
+        variant="outlined"
+
+        inputMode={type =="number" ? "numeric":""}
+        pattern={type =="number" ? "[0-9]*":""}
+      />
   </div>)
 }
 

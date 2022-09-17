@@ -9,18 +9,23 @@ import {
   SmallNavMenu,
   SmallNavLink
 } from './NavbarElements';
-  
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 const Navbar = () => {
   var [showNavbar, setShowNavbar] = useState(false);
   return (
     <>
       <Nav>
         <Bars onClick={()=> setShowNavbar(!showNavbar)} />
+
+        <FontAwesomeIcon  className={`backButton ${localStorage.getItem('token') == undefined ? 'display-none':''}`} 
+          icon={faChevronLeft} onClick={()=> history.back()}/>
         {showNavbar? 
-       <SmallNavMenu> <SmallNavLink to='/' activeStyle>
+       <SmallNavMenu onClick={()=> setShowNavbar(!showNavbar)} > 
+        <SmallNavLink to='/' activestyle>
        Cwiczenia
      </SmallNavLink>
-     <SmallNavLink to='/workouts' activeStyle>
+     <SmallNavLink to='/workouts' activestyle>
        Events
      </SmallNavLink>
      {/* Second Nav */}
@@ -28,10 +33,10 @@ const Navbar = () => {
    </SmallNavMenu>:"" 
       }
         <NavMenu>
-          <NavLink to='/' activeStyle>
+          <NavLink to='/' activestyle>
             Cwiczenia
           </NavLink>
-          <NavLink to='/workouts' activeStyle>
+          <NavLink to='/workouts' activestyle>
             Events
           </NavLink>
           {/* Second Nav */}

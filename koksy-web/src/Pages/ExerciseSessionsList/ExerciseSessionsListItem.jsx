@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react";
 import { BasicInput } from "../../Components/Inputs";
 import {Container, Row, Col, Button} from "react-bootstrap"
-function ExcerciseSessionsListItem({previousWeight, previousReps, weight, reps, handleWeightChanged, handleRepsChanged}) {
+function ExerciseSessionsListItem({previousWeight, previousReps, weight, reps, handleWeightChanged, handleRepsChanged}) {
 
   return (<div className="listItem">
     <div className="titleListItem">
@@ -35,8 +35,8 @@ function ExcerciseSessionsListItem({previousWeight, previousReps, weight, reps, 
   </div>)
 }
 
-export default ExcerciseSessionsListItem;
-ExcerciseSessionsListItem.propTypes = {
+export default ExerciseSessionsListItem;
+ExerciseSessionsListItem.propTypes = {
     previousReps: PropTypes.number,
     previousWeight: PropTypes.number,
     weight: PropTypes.number,
