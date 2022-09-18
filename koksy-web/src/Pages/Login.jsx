@@ -1,6 +1,5 @@
 import React from "react";
 import { InputWithLabel } from "../Components/Inputs";
-import { MainLayout } from "../Components/Layout";
 import { loginAction } from "../redux/actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -21,12 +20,14 @@ function Login() {
    const login=()=> {
     dispatch(loginAction({email, password}))
   }
-  return (<MainLayout>
-    <p>Login</p>
+  return (
+    <div className="loginScreen">
+    <p>Chcesz byc koksem?</p>
+    <p>To dzialaj!</p>
     <InputWithLabel label="Email" value={email} handleChange={(v)=> setEmail(v)}/>
     <InputWithLabel label="Haslo" value={password} handleChange={(v)=> setPasswors(v)} type='password'/>
   <button onClick={login}>Login</button>
-  </MainLayout>)
+    </div>)
 }
 
  export default Login
