@@ -10,7 +10,7 @@ function ExercisesList() {
   let { id } = useParams();
   const navigate = useNavigate();
 
-  const onClick = ()=> navigate(`/workoutsession/${id}`)
+  const onClick = (id)=> navigate(`/workoutsession/${id}`)
   useEffect(() => { dispatch(fetchForWorkout(id)) }, []);
   return (<MainLayout>
     <p>Exercises</p>
@@ -18,6 +18,7 @@ function ExercisesList() {
     <ExerciseListItem key={e}
     onClick={onClick}
     name={e.name}
+    id={e.id}
     sessions={e.sessionsCount}
     breakSeconds={e.breakSeconds}
     minRepeat={e.minReps}   

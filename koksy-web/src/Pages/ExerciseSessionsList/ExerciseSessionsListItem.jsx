@@ -1,26 +1,26 @@
 import PropTypes from "prop-types"
-
 import React from "react";
 import { BasicInput } from "../../Components/Inputs";
 import {Container, Row, Col, Button} from "react-bootstrap"
 import Timer from './Timer'
 import { useState } from "react";
-function ExerciseSessionsListItem({previousWeight,
+function ExerciseSessionsListItem({
+   breakSeconds,
+   setNumber,
+   previousWeight,
    previousReps,
-  weight,
-   reps,
-    handleWeightChanged,
-     handleRepsChanged,
     saveRep}) {
       var [showBreak, setShowBreak] = useState(false);
+      var [reps, setReps] = useState(0);
+      var [weight, setWeight] = useState(0);
       var handleBreakClicked =()=>{
-        saveRep();
+        saveRep(parseInt(reps), parseFloat(weight),setNumber);
         setShowBreak(true)
       }
-
+console.log(previousReps,setNumber)
   return (<div className="listItem">
     {showBreak == true ?
-   <Timer  onClick={()=> setShowBreak(false)} secondToCount={90}/>:
+   <Timer  onClick={()=> setShowBreak(false)} secondToCount={breakSeconds}/>:
      <Container fluid>
      <Row className="mb-2">
        <Col  className="smallText">{previousReps } {previousReps != null ? "x":""}</Col>
@@ -30,13 +30,13 @@ function ExerciseSessionsListItem({previousWeight,
      </Row>
      <Row>
      <Col>
-           <BasicInput value={reps} type="number" handleChange={handleRepsChanged}/>
+           <BasicInput definedStyles="bigInput" value={reps} type="number" handleChange={(val)=>{setReps(val)}}/>
        </Col>
-       <Col className="text-center">x</Col>
+       <Col className="text-center" style={{paddingTop:"12px", fontSize:"14px"}}>x</Col>
        <Col className="display-flex">  
-           <BasicInput value={weight} type="number" handleChange={handleWeightChanged}/></Col>
+           <BasicInput definedStyles="bigInput" value={weight} type="number" handleChange={(val)=> setWeight(val)}/></Col>
       
-       <Col xs={1}>kg</Col>
+       <Col xs={1}style={{paddingTop:"20px",paddingLeft:"0px", paddingBottom:"0px"}} >kg</Col>
      </Row>
      <Row>
        <Col>
@@ -52,10 +52,8 @@ export default ExerciseSessionsListItem;
 ExerciseSessionsListItem.propTypes = {
     previousReps: PropTypes.number,
     previousWeight: PropTypes.number,
-    weight: PropTypes.number,
-    reps: PropTypes.number,
-    handleWeightChanged: PropTypes.string,
-    handleRepsChanged: PropTypes.string,
-    saveRep: PropTypes.func
+    saveRep: PropTypes.func,
+    breakSeconds:PropTypes.number,
+    setNumber:PropTypes.number,
   };
 

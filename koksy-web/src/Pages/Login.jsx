@@ -17,7 +17,7 @@ function Login() {
   useEffect(() => {
     if(token)
     navigate('/workouts')
-  }); 
+  },[]); 
    const login=()=> {
     dispatch(loginAction({email, password}))
   }

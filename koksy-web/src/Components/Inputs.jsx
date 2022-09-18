@@ -27,7 +27,7 @@ export function InputWithLabel({label, value, handleChange, type, defaultValue})
     defaultValue:PropTypes.number
   };
   
-export function BasicInput({value, handleChange, type}) {
+export function BasicInput({value, handleChange, type, definedStyles}) {
   return (
   <div>
      <TextField
@@ -35,9 +35,9 @@ export function BasicInput({value, handleChange, type}) {
         type={type}
         onChange={(e) => handleChange(e.target.value)}
         variant="outlined"
-
         inputMode={type =="number" ? "numeric":""}
         pattern={type =="number" ? "[0-9]*":""}
+        className={definedStyles}
       />
   </div>)
 }
@@ -45,5 +45,6 @@ export function BasicInput({value, handleChange, type}) {
 BasicInput.propTypes = {
   value: PropTypes.text,
   handleChange: PropTypes.func.isRequired,
-  type: PropTypes.string
+  type: PropTypes.string,
+  definedStyles: PropTypes.string
 };

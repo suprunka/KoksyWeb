@@ -76,3 +76,8 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
 .text-center{
     text-align: center;
 }
+.bigInput >div> input{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
