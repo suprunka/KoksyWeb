@@ -11,7 +11,9 @@ import {
 } from './NavbarElements';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-const Navbar = () => {
+import PropTypes from "prop-types";
+
+const Navbar = ({title}) => {
   var [showNavbar, setShowNavbar] = useState(false);
   return (
     <>
@@ -20,12 +22,13 @@ const Navbar = () => {
 
         <FontAwesomeIcon  className={`backButton ${localStorage.getItem('token') == undefined ? 'display-none':''}`} 
           icon={faChevronLeft} onClick={()=> history.back()}/>
+          <p className='center-h p-3'>{title}</p> 
         {showNavbar? 
        <SmallNavMenu onClick={()=> setShowNavbar(!showNavbar)} > 
-        <SmallNavLink to='/' activestyle>
+        <SmallNavLink to='/'>
        Cwiczenia
      </SmallNavLink>
-     <SmallNavLink to='/workouts' activestyle>
+     <SmallNavLink to='/workouts'>
        Events
      </SmallNavLink>
      {/* Second Nav */}
@@ -33,10 +36,10 @@ const Navbar = () => {
    </SmallNavMenu>:"" 
       }
         <NavMenu>
-          <NavLink to='/' activestyle>
+          <NavLink to='/'>
             Cwiczenia
           </NavLink>
-          <NavLink to='/workouts' activestyle>
+          <NavLink to='/workouts'>
             Events
           </NavLink>
           {/* Second Nav */}
@@ -49,5 +52,8 @@ const Navbar = () => {
     </>
   );
 };
-  
+   
+Navbar.propTypes = {
+  title: PropTypes.text,
+};
 export default Navbar;

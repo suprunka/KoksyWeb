@@ -1,24 +1,71 @@
+:root {
+    --def-purple: #8524DC;
+    --def-darkpurple: #511a81;
+    --def-orange: #fb6d37;
+    --def-blue: #00cfc3;
+    --def-yellow: #FDC102;
+    --def-white:#fafafa;
+    --def-gray:#e9e9e9;
+  }
+  .--def-purple{
+    color: var(--def-purple) !important;
+  } 
+   .--def-orange{
+    color: var(--def-orange)!important;
+  }
+  .--def-blue{
+    color: var(--def-blue)!important;
+  }
+  .--def-orange{
+    color: var(--def-orange)!important;
+  }
+  .--def-yellow{
+    color: var(--def-yellow)!important;
+  }
+  body{
+    background-color: var(--def-gray) !important;
+
+  }
 body
 .titleListItem{
     display: flex;
 }
-
+button{
+    background-color: var(--def-purple);
+    border-radius: 4px !important;
+    color:  var(--def-white);
+    border: 1px solid var(--def-purple);
+}
+button:hover, .button:active{
+    background-color: var(--def-darkpurple);
+    border-radius: 4px !important;
+    color:  var(--def-white);
+    border: 1px solid var(--def-darkpurple);
+}
+.center-h{
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+}
+.w-fc{
+    width: fit-content;
+}
 .dateText{
     font-size: 10px;
 }
 .mainLayout{
     margin: 15px;
 }
-.listItem:hover{
-    background-color: antiquewhite;
-    
+.listItem:hover,.listItem:active{
+    /* border-color: var(--def-yellow); */
 }
 .listItem{
     padding: 15px 10px;
     margin:  20px 0px;
     border-radius: 10px;
-    border: 1px solid lightblue;
     max-height: 200px;
+    min-height: 10vh;
+    background-color: var(--def-white);
 }
 .exerciseListItem{
     padding: 10px;
@@ -28,6 +75,9 @@ body
 }
 .m-0{
     margin: 0;
+}
+.mr-4{
+    margin-right: 1.5rem;
 }
 
 .display-flex{
@@ -40,27 +90,40 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
     font-size: 13px;
     margin: 0px;
     margin-bottom: 3px;
-    color: grey;
 }
 .listItemTitle{
     font-weight: bold;
     font-size: 15px;
 }
-
+.def-orange-border{
+    border: 0.5px solid var(--def-orange) !important;
+    color: var(--def-orange) !important;
+    border-radius: 4px !important;
+}
+.def-yellow-border{
+    border: 0.5px solid var(--def-yellow) !important;
+    color: var(--def-yellow) !important;
+    border-radius: 4px !important;
+}
 .rightCornerText{
     margin-left: auto;
     margin-right:4px;
     margin-top: 1px;
+    border: 0.5px solid var(--def-blue);
+    color: var(--def-blue);
+    border-radius: 4px;
+    padding: 3px 5px;
+    height: 24px;
 }
 .smallText{
-    font-size: 13px;
+    font-size: 12px;
 }
 .backButton{
     padding: 10px;
     position: fixed;
-    top: 20px;
+    top: 12px;
     font-size: 24px;
-    color: rgb(117, 116, 116);
+    color: var(--def-purple);
 }
 .breakBtn{
     margin-top: 15px;
@@ -82,9 +145,39 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
     padding: 10px;
 }
 .loginScreen{
-    background-image: url("./login.jpg");
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;  
-    height: 100vh;
+   margin-left: auto;
+   margin-right: auto;
+   width: 70vw;
+   height: 100vh;
+   padding-top: 50px;
+}
+#loginform{
+    margin-top: 105px;
+}
+#loginform > div, button{
+    padding: 5px;
+    margin: 5px;
+    width: auto;
+}
+#loginform > button{
+margin-top: 20px;
+padding: 9px;
+    width: 100%;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    vertical-align: top;
+    width: 100%;
 }

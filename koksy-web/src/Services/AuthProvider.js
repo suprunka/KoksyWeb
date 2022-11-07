@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
     Navigate,useLocation  } from 'react-router-dom';
 
@@ -13,7 +15,7 @@ import {
     return children;
   };
   ProtectedRoute.propTypes = {
-    children: React.Component
+    children: PropTypes.element,
   };
 
  

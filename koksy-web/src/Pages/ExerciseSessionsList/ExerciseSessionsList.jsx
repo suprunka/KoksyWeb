@@ -12,8 +12,6 @@ function ExerciseSessionsList() {
 
   var {exercise} = useSelector(state=> state.exercise)
 useEffect(()=>{
-  var array = [1,2,3]
-  console.log(array.find(s=> s ==1))
 dispatch(fetchOne(id)),
 dispatch(fetchLastSessions(id))
 },[id])
@@ -51,9 +49,11 @@ console.log(ssss)
     }
     return content;
   };
-  return (<MainLayout>
-    <p>{name}</p>
+  return (<MainLayout pageName={exercise.name}>
     <div> 
+      <div>
+        {/* <video src={exercise.url}/> */}
+      </div>
 {getSessions(exercise)}
 </div>   
   </MainLayout>)

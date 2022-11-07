@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Route, Routes  } from 'react-router-dom';
-import Navbar from './Components/Navbar/index';
 import ExerciseSessionsList from './Pages/ExerciseSessionsList';
 import ExercisesList from './Pages/ExercisesList/ExcercisesList';
 import Login from './Pages/Login'
@@ -10,7 +9,6 @@ import { ProtectedRoute } from './Services/AuthProvider';
 const MainLayuotRoutes = () => {
     return (
   <React.Fragment>
-  <Navbar />
   
         <Routes>
           <Route path='/workouts' element={<ProtectedRoute><WorkoutsList/></ProtectedRoute>} />

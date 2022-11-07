@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function WorkoutsList() {
     let navigate = useNavigate();
+    const name = "Treningi"
     const {list} = useSelector(state=> state.workoutDays)
     const dispatch = useDispatch();
 
@@ -17,8 +18,7 @@ function WorkoutsList() {
   };
 
   return (
-  <MainLayout>
-    <p>Workouts</p>
+  <MainLayout pageName={name}>
     <div> {list?.map(el =>
          <WorkoutListItem key={el.id}
           name={el.name} 

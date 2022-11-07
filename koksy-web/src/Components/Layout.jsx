@@ -2,15 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Navbar";
 
-export function MainLayout({ children, loading }) {
+export function MainLayout({ children, loading, pageName }) {
 
   if (loading)
-    return (<div className="mainLayout">
-    </div>)
-  return (
+    return (  <div>
+      <Navbar title={pageName} />
     <div className="mainLayout">
-
+    </div>
+      </div>)
+  return (
+    <div>
+      <Navbar title={pageName} />
+    <div className="mainLayout">
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -25,10 +30,12 @@ export function MainLayout({ children, loading }) {
 
       {children}
 
-    </div>)
+    </div>    </div>
+)
 }
 
 MainLayout.propTypes = {
   children: PropTypes.any,
   loading: PropTypes.bool,
+  pageName: PropTypes.string,
 };

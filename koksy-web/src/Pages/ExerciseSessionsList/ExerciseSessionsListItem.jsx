@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react";
 import { BasicInput } from "../../Components/Inputs";
-import {Container, Row, Col, Button} from "react-bootstrap"
+import {Container, Row, Col} from "react-bootstrap"
 import Timer from './Timer'
 import { useState } from "react";
 function ExerciseSessionsListItem({
@@ -40,7 +40,7 @@ console.log(previousReps,setNumber)
      </Row>
      <Row>
        <Col>
-       <Button className="breakBtn"  onClick={handleBreakClicked}>Przerwa</Button>
+       <button className="breakBtn"  onClick={handleBreakClicked}>Przerwa</button>
        </Col>
      </Row>
    </Container> }

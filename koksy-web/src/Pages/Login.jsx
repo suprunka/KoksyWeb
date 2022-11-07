@@ -4,7 +4,7 @@ import { loginAction } from "../redux/actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import img from "../imgs/logo128.png"
 
 function Login() {
   var [email, setEmail] = React.useState('');
@@ -22,11 +22,14 @@ function Login() {
   }
   return (
     <div className="loginScreen">
-    <p>Chcesz byc koksem?</p>
-    <p>To dzialaj!</p>
+      <img className="center-h" src={img}/>
+    <p className="center-h pt-4 w-fc" >Witaj KOKSIE</p>
+    <div id="loginform">
+
     <InputWithLabel label="Email" value={email} handleChange={(v)=> setEmail(v)}/>
     <InputWithLabel label="Haslo" value={password} handleChange={(v)=> setPasswors(v)} type='password'/>
   <button onClick={login}>Login</button>
+    </div>
     </div>)
 }
 

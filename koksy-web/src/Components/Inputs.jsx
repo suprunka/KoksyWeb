@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  TextField
-} from "@material-ui/core";
+import { TextField } from '@mui/material';
 export function InputWithLabel({label, value, handleChange, type, defaultValue}) {
   
     return (

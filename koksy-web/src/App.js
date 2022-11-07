@@ -7,7 +7,6 @@ export const AuthContext = React.createContext(null);
 const App = () => {
   return (
 <Router>
-
       <Routes>
       <Route path='/' exact element={<Login/>} />
                      <Route path="*" element={<MainLayuotRoutes />} />
