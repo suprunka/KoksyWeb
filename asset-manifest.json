@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/KoksyWeb/static/css/main.b5880efd.css",
+    "main.js": "/KoksyWeb/static/js/main.9f764a1c.js",
+    "static/js/787.31eb1b4d.chunk.js": "/KoksyWeb/static/js/787.31eb1b4d.chunk.js",
+    "index.html": "/KoksyWeb/index.html",
+    "main.b5880efd.css.map": "/KoksyWeb/static/css/main.b5880efd.css.map",
+    "main.9f764a1c.js.map": "/KoksyWeb/static/js/main.9f764a1c.js.map",
+    "787.31eb1b4d.chunk.js.map": "/KoksyWeb/static/js/787.31eb1b4d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5880efd.css",
+    "static/js/main.9f764a1c.js"
+  ]
+}
