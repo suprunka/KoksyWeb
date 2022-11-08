@@ -22,6 +22,14 @@
   .--def-yellow{
     color: var(--def-yellow)!important;
   }
+  .bg-white{
+    background-color: var(--def-white);
+  }
+  .bg-orange{
+    background-color: var(--def-orange);
+    border: 0.5px solid var(--def-orange) !important;
+
+  }
   body{
     background-color: var(--def-gray) !important;
 
@@ -42,6 +50,7 @@ button:hover, .button:active{
     color:  var(--def-white);
     border: 1px solid var(--def-darkpurple);
 }
+
 .center-h{
     margin-left: auto;
     display: block;
@@ -50,15 +59,22 @@ button:hover, .button:active{
 .w-fc{
     width: fit-content;
 }
+.w-100{
+    width:100%
+}
+.border-radius{
+    border-radius: 4px;
+}
 .dateText{
     font-size: 10px;
 }
 .mainLayout{
-    margin: 15px;
+    padding: 15px;
 }
 .listItem:hover,.listItem:active{
     /* border-color: var(--def-yellow); */
 }
+
 .listItem{
     padding: 15px 10px;
     margin:  20px 0px;
@@ -132,9 +148,26 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
 .timer{
     text-align: center;
     font-size: 35px;
+    padding: 15px 10px;
+    margin:  20px 0px;
+    border-radius: 10px;
+    max-height: 200px;
+    min-height: 10vh;
+    background-color: var(--def-yellow);
 }
 .CircularProgressbar{
     max-height: 100px;
+}
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: var(--def-white) !important;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease 0s;
+}
+.CircularProgressbar .CircularProgressbar-text {
+    fill:var(--def-white) !important;
+    font-size: 20px;
+    dominant-baseline: middle;
+    text-anchor: middle;
 }
 .text-center{
     text-align: center;
@@ -180,4 +213,7 @@ padding: 9px;
     border: 0;
     vertical-align: top;
     width: 100%;
+}
+.closedSession{
+    opacity: 59%;
 }

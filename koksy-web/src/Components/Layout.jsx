@@ -4,18 +4,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Navbar";
 
-export function MainLayout({ children, loading, pageName }) {
+export function MainLayout({ children, loading, pageName, className }) {
 
   if (loading)
     return (  <div>
       <Navbar title={pageName} />
-    <div className="mainLayout">
+    <div className={`mainLayout ${className}`}>
     </div>
       </div>)
   return (
     <div>
       <Navbar title={pageName} />
-    <div className="mainLayout">
+      <div className={`mainLayout ${className}`}>
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -38,4 +38,5 @@ MainLayout.propTypes = {
   children: PropTypes.any,
   loading: PropTypes.bool,
   pageName: PropTypes.string,
+  className: PropTypes.string,
 };

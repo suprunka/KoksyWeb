@@ -31,14 +31,20 @@ function Timer({secondToCount,onClick}) {
             )
             setMySeconds(100-100/(secondToCount)*(seconds+60*minutes))
         }
+        else{
+            onClick()
+        }
     }
   
     const clearTimer = (e) => {
+        
         if (Ref.current) clearInterval(Ref.current);
         const id = setInterval(() => {
             startTimer(e);
+
         }, 1000)
         Ref.current = id;
+
     }
   
     const getDeadTime = (secondToCount) => {
@@ -49,7 +55,6 @@ function Timer({secondToCount,onClick}) {
 
     useEffect(() => {
         clearTimer(getDeadTime(secondToCount));
-
     }, []);
   
     return (
@@ -58,7 +63,6 @@ function Timer({secondToCount,onClick}) {
         value={mySeconds}
         text={timer}
         strokeWidth={5}
-        
       />
         </div>
     )

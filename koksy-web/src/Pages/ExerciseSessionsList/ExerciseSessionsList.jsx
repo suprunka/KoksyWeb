@@ -6,6 +6,7 @@ import {addSession, fetchLastSessions} from "../../redux/actions/workoutSessionA
 import ExerciseSessionsListItem from "./ExerciseSessionsListItem";
 import { useEffect } from "react";
 import { fetchOne } from "../../redux/actions/exercisesActions";
+import { useState } from "react";
 function ExerciseSessionsList() {
   const dispatch = useDispatch()
   const {id} = useParams()
@@ -17,9 +18,11 @@ dispatch(fetchLastSessions(id))
 },[id])
 
 const {lastSessions} = useSelector(state=> state.workoutSession)
-const ssss = useSelector(state=> state.workoutSession)
-console.log(ssss)
-  var handleSaveRep=(reps, weight,setNumber)=>{
+var [possibleReps, setPossibleReps] = useState(0);
+var [possibleWeight, setPossileWeight] = useState(0);
+
+
+var handleSaveRep=(reps, weight,setNumber)=>{
     if(reps>0 && weight >0){
       var request = {
         reps:reps,
@@ -28,10 +31,10 @@ console.log(ssss)
         workoutId:id
       }
      dispatch(addSession(request))
-
+     setPossibleReps(reps)
+     setPossileWeight(weight)
     }
   }
-  console.log(lastSessions)
 
   const getSessions = exercise => {
     let content = [];
@@ -44,16 +47,19 @@ console.log(ssss)
         name={exercise.name}
         previousReps={lastSessions.find(s=> s.setNumber == session)?.reps}
         previousWeight={lastSessions.find(s=> s.setNumber == session)?.weight}
+        possibleReps ={possibleReps}
+        possibleWeight={possibleWeight}
         saveRep={handleSaveRep}
         />);
     }
     return content;
   };
-  return (<MainLayout pageName={exercise.name}>
-    <div> 
-      <div>
-        {/* <video src={exercise.url}/> */}
-      </div>
+  console.log(exercise.url)
+  return (<MainLayout pageName={exercise.name} className="bg-white">
+    <div className="sessions"> 
+    <iframe height="200px" className="w-100 border-radius" src="https://www.youtube.com/embed/Zp26q4BY5HE"
+     title="YouTube video player"
+      frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {getSessions(exercise)}
 </div>   
   </MainLayout>)

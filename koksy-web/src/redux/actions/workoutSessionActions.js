@@ -42,7 +42,7 @@ export const addSession = (request) => async (dispatch) => {
 export const fetchLastSessions = (workoutId) => async (dispatch) => {
   try {
     //TODO UserID find in api
-    const { data } = await trackPromise(get(`WorkoutSessions/api/users/{userId}/${workoutId}/Sessions` ));
+    const { data } = await trackPromise(get(`Workout/${workoutId}/Sessions` ));
     dispatch(workoutLastSessionFetchedSuccess(data));
   }
   catch (err) {

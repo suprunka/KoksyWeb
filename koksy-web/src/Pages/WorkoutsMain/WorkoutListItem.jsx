@@ -39,9 +39,9 @@ WorkoutListItem.propTypes = {
   function FormatDate(date){
     var daysAgo = Math.round((new Date()-new Date(date))/ (1000 * 60 * 60 * 24),0)
     if(daysAgo == 1)
-    return "yesterday"
+    return "wczoraj"
     else if(daysAgo<=5)
-    return  `${daysAgo} days ago`
+    return  `${daysAgo} dni temu`
     else
     return new moment(date).locale("pl").calendar();
 

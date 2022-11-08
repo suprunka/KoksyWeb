@@ -12,8 +12,7 @@ function ExercisesList() {
 
   const onClick = (id)=> navigate(`/workoutsession/${id}`)
   useEffect(() => { dispatch(fetchForWorkout(id)) }, []);
-  return (<MainLayout>
-    <p>Exercises</p>
+  return (<MainLayout pageName={"Cwiczenia"}>
     {workoutExercises.map(e=> 
     <ExerciseListItem key={e}
     onClick={onClick}
