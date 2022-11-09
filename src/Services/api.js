@@ -1,5 +1,5 @@
 import axios from 'axios';
-const HOST = 'https://koksy-api.herokuapp.com/';
+const HOST = 'https://koksy-api.herokuapp.com';
 export  function post(endpoint, request){
     let config = {
         headers: {
