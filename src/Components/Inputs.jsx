@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { TextField } from '@mui/material';
-export function InputWithLabel({label, value, handleChange, type, defaultValue}) {
-  
+export function InputWithLabel({label, value, handleChange, type, defaultValue, error}) {
+  console.log(error)
     return (
     <div>
        <TextField
@@ -12,6 +12,7 @@ export function InputWithLabel({label, value, handleChange, type, defaultValue})
         autoComplete="current-password"
         variant="outlined"
         label={label}
+        className={error}
         defaultValue={defaultValue}
       />
     </div>)
@@ -22,8 +23,11 @@ export function InputWithLabel({label, value, handleChange, type, defaultValue})
     value: PropTypes.text,
     type: PropTypes.text,
     handleChange: PropTypes.func.isRequired,
-    defaultValue:PropTypes.number
-  };
+    defaultValue:PropTypes.number,
+    error:PropTypes.object
+    };
+  
+  
   
 export function BasicInput({value, handleChange, type, definedStyles}) {
   return (

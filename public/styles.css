@@ -1,14 +1,27 @@
 :root {
+    
+    --def-danger: #be3131;
     --def-purple: #8524DC;
+    --def-pink: #e72ec8;
     --def-darkpurple: #511a81;
     --def-orange: #fb6d37;
     --def-blue: #00cfc3;
     --def-yellow: #FDC102;
     --def-white:#fafafa;
     --def-gray:#e9e9e9;
+
+    --def-purple-opacity: #8624dc27;
+    --def-pink-opacity: #e72ec827;
+    --def-orange-opacity: #fb6e371c;
+    --def-blue-opacity: #00cfc510;
+    --def-yellow-opacity: #fdc2022a;
+
   }
   .--def-purple{
     color: var(--def-purple) !important;
+  } 
+  .gray{
+    color: gray !important;
   } 
    .--def-orange{
     color: var(--def-orange)!important;
@@ -22,6 +35,31 @@
   .--def-yellow{
     color: var(--def-yellow)!important;
   }
+  .--def-pink{
+    color: var(--def-pink)!important;
+  }
+  .bg--def-purple-opacity{
+    background-color: var(--def-purple-opacity) !important;
+  } 
+   .bg--def-orange-opacity{
+    background-color: var(--def-orange-opacity)!important;
+  }
+  .bg--def-blue-opacity{
+    background-color: var(--def-blue-opacity)!important;
+  }
+  .bg--def-orange-opacity{
+    background-color: var(--def-orange-opacity)!important;
+  }
+  .bg--def-yellow-opacity{
+    background-color: var(--def-yellow-opacity)!important;
+  }
+  .bg--def-pink-opacity{
+    background-color: var(--def-pink-opacity)!important;
+  }
+
+
+
+
   .bg-white{
     background-color: var(--def-white);
   }
@@ -66,7 +104,7 @@ button:hover, .button:active{
     border-radius: 4px;
 }
 .dateText{
-    font-size: 10px;
+    font-size: 14px !important;
 }
 .mainLayout{
     padding: 15px;
@@ -76,7 +114,7 @@ button:hover, .button:active{
 }
 
 .listItem{
-    padding: 15px 10px;
+    padding: 10px 10px;
     margin:  20px 0px;
     border-radius: 10px;
     max-height: 200px;
@@ -95,7 +133,13 @@ button:hover, .button:active{
 .mr-4{
     margin-right: 1.5rem;
 }
-
+.pr-2{
+    padding-right: 1rem;
+   }
+   .pr-1{
+    padding-right: 0.5rem;
+   }
+      
 .display-flex{
     display: flex;
 }
@@ -108,8 +152,8 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
     margin-bottom: 3px;
 }
 .listItemTitle{
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: 100;
+    font-size: 25px;
 }
 .def-orange-border{
     border: 0.5px solid var(--def-orange) !important;
@@ -125,11 +169,13 @@ p.detilsExerciseListItem, .detilsExerciseListItem >p {
     margin-left: auto;
     margin-right:4px;
     margin-top: 1px;
-    border: 0.5px solid var(--def-blue);
     color: var(--def-blue);
     border-radius: 4px;
     padding: 3px 5px;
     height: 24px;
+    font-weight: 100;
+    font-size: 28px;
+    margin-bottom: 0px;
 }
 .smallText{
     font-size: 12px;
@@ -220,4 +266,60 @@ padding: 9px;
 .css-i44wyl {
 
     width: 100% !important;
+}
+.smallRoundLabel{
+    background-color: #00cfc333;
+    color: var(--def-blue);
+    border-radius: 15px;
+    margin: 0;
+    padding: 1px 10px;
+    font-size: 10px;
+}
+.rightCornerTextBig{
+    margin-left: auto;
+    color: gray;
+    font-weight: 100;
+    font-size: 20px;
+}
+form > input, form> input.pureInput{
+    margin:10px 0px !important;
+}
+form > div > div.error>div>input{
+    border: 2px solid var(--def-danger);
+    border-radius: 4px;
+}
+form > div > div.error>label{
+    color: var(--def-danger);
+}
+p.invalidField{
+    font-size: 10px;
+    color: var(--def-danger);
+    /* margin-top: -5px; */
+}
+form > p{
+    margin:0px 15px;
+}
+
+input.pureInput{
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentColor;
+    padding: 4px 0 5px;
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0;
+    max-width: -webkit-fill-available;
+    -webkit-animation-name: mui-auto-fill-cancel;
+    animation-name: mui-auto-fill-cancel;
+    -webkit-animation-duration: 10ms;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+    border: 1px solid #a9acac;
+    border-radius: 4px;
+
 }

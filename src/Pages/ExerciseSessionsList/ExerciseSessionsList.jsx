@@ -57,7 +57,7 @@ var handleSaveRep=(reps, weight,setNumber)=>{
   console.log(exercise.url)
   return (<MainLayout pageName={exercise.name} className="bg-white">
     <div className="sessions"> 
-    <iframe height="200px" className="w-100 border-radius" src="https://www.youtube.com/embed/Zp26q4BY5HE"
+    <iframe height="200px" className="w-100 border-radius" src={exercise.url}
      title="YouTube video player"
       frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {getSessions(exercise)}

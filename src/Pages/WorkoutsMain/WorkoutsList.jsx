@@ -23,6 +23,7 @@ function WorkoutsList() {
          <WorkoutListItem key={el.id}
           name={el.name} 
           lastOpened={el.lastOpened}
+          // workoutsCount={el.workouts.length}
           onClick={()=>handleDayClick(el.id)}
           />)} 
 </div>   

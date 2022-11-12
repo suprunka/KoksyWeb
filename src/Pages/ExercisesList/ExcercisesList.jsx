@@ -13,7 +13,7 @@ function ExercisesList() {
   const onClick = (id)=> navigate(`/workoutsession/${id}`)
   useEffect(() => { dispatch(fetchForWorkout(id)) }, []);
   return (<MainLayout pageName={"Cwiczenia"}>
-    {workoutExercises.map(e=> 
+    {workoutExercises.map((e,index)=> 
     <ExerciseListItem key={e}
     onClick={onClick}
     name={e.name}
@@ -22,6 +22,7 @@ function ExercisesList() {
     breakSeconds={e.breakSeconds}
     minRepeat={e.minReps}   
     maxRepeat={e.maxReps}
+    index= {index}
     />)}
   </MainLayout>)
 }
