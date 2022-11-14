@@ -39,6 +39,7 @@ export function BasicInput({value, handleChange, type, definedStyles}) {
         variant="outlined"
         inputMode={type =="number" ? "numeric":""}
         pattern={type =="number" ? "[0-9]*":""}
+        min="0"
         className={definedStyles}
       />
   </div>)

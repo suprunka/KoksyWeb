@@ -21,7 +21,7 @@ function ExerciseSessionsListItem({
         setShowBreak(true)
         setButtonClicked(true)
       }
-      console.log(buttonClicked)
+      console.log(weight, possibleWeight, weight!== undefined)
 
       if(showBreak)
       return(<Timer  onClick={()=> setShowBreak(false)} secondToCount={breakSeconds}/>)
@@ -30,11 +30,11 @@ function ExerciseSessionsListItem({
         <Container fluid className="listItem closedSession">
         <Row>
         <Col>
-              <BasicInput definedStyles="bigInput" value={reps>0? reps: possibleReps} type="number" handleChange={(val)=>{setReps(val)}}/>
+              <BasicInput definedStyles="bigInput" value={reps!== undefined?  reps: possibleReps} type="number" handleChange={(val)=>{if(val>=0) setReps(val)}}/>
           </Col>
           <Col className="text-center" style={{paddingTop:"12px", fontSize:"14px"}}>x</Col>
           <Col className="display-flex">  
-              <BasicInput definedStyles="bigInput" value={weight>0? weight: possibleWeight} type="number" handleChange={(val)=> setWeight(val)}/></Col>
+              <BasicInput definedStyles="bigInput" value={weight!== undefined? weight: possibleWeight} type="number" handleChange={(val)=> {if(val>=0) setWeight(val)}}/></Col>
          
           <Col xs={1}style={{paddingTop:"20px",paddingLeft:"0px", paddingBottom:"0px"}} >kg</Col>
         </Row>
@@ -57,11 +57,11 @@ function ExerciseSessionsListItem({
      </Row>
      <Row>
      <Col>
-           <BasicInput definedStyles="bigInput" value={reps>0? reps: possibleReps} type="number" handleChange={(val)=>{setReps(val)}}/>
+           <BasicInput definedStyles="bigInput" value={reps!== undefined? reps: possibleReps} type="number" handleChange={(val)=>{if(val>=0) setReps(val)}}/>
        </Col>
        <Col className="text-center" style={{paddingTop:"12px", fontSize:"14px"}}>x</Col>
        <Col className="display-flex">  
-           <BasicInput definedStyles="bigInput" value={weight>0? weight: possibleWeight} type="number" handleChange={(val)=> setWeight(val)}/></Col>
+           <BasicInput definedStyles="bigInput" value={weight!== undefined? weight: possibleWeight} type="number" handleChange={(val)=> {if(val>=0) setWeight(val)}}/></Col>
       
        <Col xs={1}style={{paddingTop:"20px",paddingLeft:"0px", paddingBottom:"0px"}} >kg</Col>
      </Row>
